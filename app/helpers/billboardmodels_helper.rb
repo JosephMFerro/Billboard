@@ -1,0 +1,2 @@
+module BillboardmodelsHelper
+end

@@ -1,0 +1,39 @@
+
+<h2 class = "ui yellow center aligned icon header">
+<i class="music icon"></i>
+  <div class = "content">
+    top 100
+  </div>
+</h2>
+<hr />
+<div class = "ui center aligned basic segment">
+  <%= link_to "New Billboard", new_billboardmodel_path %>
+</div>
+<% @billboardmodels.each do |billboardmodel|%>
+  <div class="ui centered card">
+   <div class="image">
+     <img src="https://theenterprise.net/wp-content/uploads/2017/05/music_icon_1493839615.png"/>
+   </div>
+    <div class="ui content center aligned">
+      <%= link_to "#{billboardmodel.name}", billboardmodel, class: "centered header" %>
+      <hr/>
+      <%= link_to "#{billboardmodel.location}", billboardmodel, class: "centered header" %>
+    </div>
+      <div class="extra content">
+        <div class="ui three buttons">
+          <div class="ui gray icon button">
+          <i class = "eye icon"></i>
+            <%= link_to ".", nil, class: "card-button" %>
+          </div>
+          <div class="ui yellow icon button">
+          <i class = "edit icon"></i>
+            <%= link_to ".", edit_billboardmodel_path(billboardmodel), class: "card-button" %>
+          </div>
+          <div class="ui yellow icon button">
+            <i class ="trash icon"></i>
+            <%= link_to ".", billboardmodel_path(billboardmodel), method: :delete,  class: "card-button" %>
+          </div>
+          </div>
+        </div>
+      </div>
+<% end %>
