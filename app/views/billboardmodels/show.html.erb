@@ -1,2 +1,12 @@
-<h1>Billboardmodels#show</h1>
-<p>Find me in app/views/billboardmodels/show.html.erb</p>
+
+
+<% 10.times do %>
+<% def first_name; fetch('name.first_name'); %> <% end %>
+<%= puts first_name %>
+  <% 30.times do %>
+    <% def name %> 
+    <% parse('name.name') %>
+    <% end %>
+    <%= puts name %>
+  <% end %>
+<% end %>

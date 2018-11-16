@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   root "billboardmodels#index"
 
-  resources :billboardmodels
+  resources :billboardmodels do
+    resources :artist
+  end
 end
