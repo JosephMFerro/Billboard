@@ -1,9 +1,9 @@
 <h4>top 20</h4>
 <hr />
-<%= link_to "add song", new_billboardmodel_song_path(@billboardmodel), class: "button" %>
+<%= link_to "add song", new_billboardmodel_song_path(:id), class: "button" %>
 <% @songs.each do |song| %>
   <h5><%= song.name %></h5>
   <p><%= song.artist %></p>
   <hr />
 <% end %>
-<%= link_to "back", billboardmodel_path(@billboardmodel) %>
+<%= link_to "back", billboardmodel_path(:id) %>

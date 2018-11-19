@@ -1,2 +1,9 @@
-<h1>Songs#new</h1>
-<p>Find me in app/views/songs/new.html.erb</p>
+<h1>new song</h1>
+<hr />
+
+<%= render "form", song: @song %>
+
+<br />
+<br />
+
+<%= link_to "back", billboardmodel_songs_path, class: "back-button"%>

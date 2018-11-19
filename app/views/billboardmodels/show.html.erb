@@ -1,5 +1,5 @@
 <h3><%= @billboardmodel.name  %></h3>
-<%= link_to "show songs", billboardmodel_songs_path(@billboardmodel) %>
+<%= link_to "show songs", billboardmodel_songs_path(@billboardmodel.id) %>
 <hr />
 <%= link_to "edit", edit_billboardmodel_path, class: "button"%>
 <%= link_to "delete", billboardmodel_path, method: :delete, class: "button"%>
