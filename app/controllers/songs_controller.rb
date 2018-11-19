@@ -25,24 +25,24 @@ class SongsController < ApplicationController
   end
 
   def update
-    if @song.update(billboardmodel_params)
-      redirect_to billboardmodels_path
+    if @song.update(song_params)
+      redirect_to songs_path
     else
       render :edit
     end
   end
 
   def destroy
-    @billboardmodel.destroy
-    redirect_to billboardmodels_path
+    @song.destroy
+    redirect_to songs_path
   end
 
   private
-    def billboardmodel_params
-      params.require(:billboardmodel).permit(:name, :location)
+    def song_params
+      params.require(:song).permit(:name)
     end
 
-    def set_billboardmodel
-      @billboardmodel = Billboardmodel.find(params[:id])
+    def set_song
+      @song = Song.find(params[:id])
     end
 end

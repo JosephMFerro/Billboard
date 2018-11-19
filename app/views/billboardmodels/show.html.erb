@@ -1,12 +1,6 @@
-
-
-<% 10.times do %>
-<% def first_name; fetch('name.first_name'); %> <% end %>
-<%= puts first_name %>
-  <% 30.times do %>
-    <% def name %> 
-    <% parse('name.name') %>
-    <% end %>
-    <%= puts name %>
-  <% end %>
-<% end %>
+<h3><%= @billboardmodel.name  %></h3>
+<%= link_to "show songs", billboardmodel_songs_path(@billboardmodel) %>
+<hr />
+<%= link_to "edit", edit_billboardmodel_path, class: "button"%>
+<%= link_to "delete", billboardmodel_path, method: :delete, class: "button"%>
+<%= link_to "back", billboardmodels_path(@billboardmodel), class: "button" %>

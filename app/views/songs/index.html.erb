@@ -1,2 +1,9 @@
-<h1>Songs#index</h1>
-<p>Find me in app/views/songs/index.html.erb</p>
+<h4>top 20</h4>
+<hr />
+<%= link_to "add song", new_billboardmodel_song_path(@billboardmodel), class: "button" %>
+<% @songs.each do |song| %>
+  <h5><%= song.name %></h5>
+  <p><%= song.artist %></p>
+  <hr />
+<% end %>
+<%= link_to "back", billboardmodel_path(@billboardmodel) %>

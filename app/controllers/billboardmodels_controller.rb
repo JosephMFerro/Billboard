@@ -2,7 +2,8 @@ class BillboardmodelsController < ApplicationController
   before_action :set_billboardmodel, except: [:index, :new, :create]
 
   def index
-    @billboardmodels = Billboardmodel.all
+    # @billboardmodels = Billboardmodel.all
+    @billboardmodels = Billboardmodel.except('order').order("id DESC")
   end
 
   def show
@@ -34,15 +35,14 @@ class BillboardmodelsController < ApplicationController
 
   def destroy
     @billboardmodel.destroy
-    redirect_to billboardmodels_path
+    redirect_to billboardmodel_path
   end
 
   private
-    def billboardmodel_params
-      params.require(:billboardmodel).permit(:name, :location)
-    end
-
     def set_billboardmodel
       @billboardmodel = Billboardmodel.find(params[:id])
+    end
+    def billboardmodel_params
+      params.require(:billboardmodel).permit(:name, :location)
     end
 end
