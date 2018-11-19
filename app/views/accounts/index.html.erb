@@ -1,0 +1,27 @@
+
+<%# I know this is terrible practice but css wasnt working for me %>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<div class="ui placeholder segment">
+  <div class="ui icon header">
+    <i class="user icon"></i>
+    welcome
+  </div>
+  <div class="inline">
+    <div class="ui center aligned two buttons">
+      <%= link_to "Add Account", new_account_path, class: "ui yellow button"%>%>
+      <%= link_to "View Your Billboards", billboardmodels_path, class: "ui olive button"%>
+    </div>
+  </div>
+</div>
+<%= link_to "Log Out", destroy_user_session_path, method: :delete, class:"ui white button" %>
+
+
